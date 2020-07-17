@@ -1,0 +1,403 @@
+@import "__variable";
+@import "__default";
+
+
+%transition{
+	-webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+@mixin redius($value){
+	border-radius: $value;
+}
+@mixin shadow($X, $Y, $blur){
+	-webkit-box-shadow: $X $Y $blur #0000001f;
+			box-shadow: $X $Y $blur #0000001f;
+}
+
+%btn{
+	font-size: 19px;
+	letter-spacing: 1px;
+	@include redius(30px);
+    padding: 7px 26px;
+    @extend %transition;
+}
+%btn2{
+
+
+	background-color: $secondary_Color;
+    @extend %btn;
+    color: #fff;
+
+
+
+		 &:hover {
+		 	background-color: #fff;
+		 	color: #000;
+		 	border: 1px solid $secondary_Color;
+
+			}
+
+
+}
+
+
+
+
+
+header{
+	background-color: $bg-Color;
+
+	.navbar-brand{
+		img{
+			width: 200px;
+		}
+	}
+
+	.navbar-light{
+
+		.navbar-nav {
+
+			li{
+				
+				.nav-link {
+					color: $primary_Color;
+				    @extend %btn;
+
+
+   					 &:hover{
+   					 	background-color: $secondary_Color;
+   					 	color: #fff;
+
+					}
+
+
+				}
+
+			&:last-child .nav-link{
+				background-color: $secondary_Color;
+   				color: #fff;
+				}
+
+
+			}
+
+		}
+
+	}
+
+	h4{
+		color: red;
+		font-size: 20px
+	}
+	h1{
+		color: $primary_Color;
+    	margin: 15px 0px;
+		font-size: 70px;
+		font-weight: 600;
+		line-height: 1;
+		span{
+			color: $secondary_Color;
+		}
+	}
+	p{
+		color: $primary_Color;
+		font-size: 18px;
+		opacity: 0.7;
+		line-height: 1.8;
+
+	}
+
+}
+
+
+.btn-custom {
+					@extend %btn2;
+
+				}
+
+.books-section{
+			padding: 40px 0;
+	.books{
+		text-align: center;
+		padding: 30px;
+		background-color: $bg-Color;
+		@include redius(10px);
+		@extend %transition;
+
+		&:hover{
+			background-color:#fff;
+
+			@include shadow(0, 20px, 40px);
+
+		}
+
+		img{
+			height: 80px;
+		}
+		h2{
+			font-size: 26px;
+			font-weight: 700;
+			padding: 8px 0 0;
+
+		}
+		p{
+			
+		}
+	}
+
+}
+.heading{
+	text-align: center;
+	padding: 50px 0;
+	h1{
+		font-size: 46px;
+		font-weight: 900;
+		letter-spacing: 1px;
+
+	}
+}
+
+.courses-section{
+
+	.course{
+			
+			@include redius(12px);
+
+			@include shadow(0, 20px, 40px);
+
+		.card-body{
+			img{
+				@include redius(10px);
+			}
+
+			.card-title{
+				font-size: 26px;
+				margin: 10px 0 0;
+				
+			}
+
+			.card-text{
+			margin-bottom: 10px;
+			font-size: 18px;
+			color: $primary_Color;
+			opacity: 0.7;
+			line-height: 1.8;
+
+			}
+
+			.nav{
+				margin-top: 10px;
+				align-items: center;
+
+				li{
+					img{
+						width: 20px;
+					}
+					span{
+						font-size: 14px;
+						font-weight: 500;
+					}
+				}
+
+			}
+
+
+
+		}
+
+	}
+
+}
+
+.testimonial-section{
+			padding: 50px 0;
+
+			img{
+
+			}
+			p{
+		color: $primary_Color;
+		font-size: 18px;
+		opacity: 0.7;
+
+			}
+
+}
+
+footer{
+
+	background-color: #282531;
+	color: #fff;
+	padding: 50px 0 0;
+	p{
+	color: #fff;
+		font-size: 18px;
+		opacity: 0.7;
+	}
+	h3{
+
+	}
+	ul{
+
+		li{
+
+			a{
+				color: #fff;
+				font-size: 16px;
+				text-decoration: none;
+				display: block;
+				background-color: transparent;
+				padding: 3px 0;
+				&:hover{
+
+				opacity:0.8;
+				color: #fff;
+				text-decoration: none;
+				@extend %transition;
+			 }
+
+
+			}
+
+		}
+
+	}
+	.copyright{
+		text-align: center;
+		padding: 30px 0;
+		p{
+			color: #fff;
+		font-size: 15px;
+		margin-bottom: 0;
+		a{
+			color: $secondary_Color;
+			font-weight: 800;
+		}
+		}
+	}
+
+}
+
+
+@media (max-width: 1199px){
+	header h1{
+		font-size: 55px;
+	}
+	.books-section .books h2 {
+    font-size: 21px;
+  }  
+  .books-section .books p {
+    font-size: 15px;
+  }  
+
+  .course .btn-custom {
+    font-size: 15px;
+    padding: 4px 17px;
+
+}
+
+}
+
+
+
+@media (max-width: 991px){
+	.navbar-nav {
+  
+    flex-direction: row;
+    -ms-flex-direction: row;
+    justify-content: center;
+ }
+ header h1{
+		font-size: 44px;
+	}
+	header p{
+		font-size: 16px;
+	}
+
+.books-section .books h2 {
+    font-size: 12.5px;
+}
+.books-section .books p {
+    font-size: 12px;
+
+}
+.books-section .books img {
+    height: 66px;
+}
+
+.card-body{
+	padding: 10px;
+}
+.courses-section .course .card-body .card-title {
+    font-size: 19px;
+  
+}
+.courses-section .course .card-body .nav li:last-child {
+    display: none;}
+
+}
+
+
+
+@media (max-width: 767px){
+	.btn-custom, header .navbar-light .navbar-nav li .nav-link {
+    font-size: 16px;
+}
+header .col-md img{
+	max-width: 350px;
+	margin: auto;
+	display: block;
+	margin-top: 25px;
+
+}
+header .row{
+	text-align: center;
+}
+.books{
+	margin-bottom: 30px;
+}
+.course{
+	margin-bottom: 30px;
+}
+.testimonial-section p {
+    
+    font-size: 14px;
+    
+}
+
+}
+
+
+
+@media (max-width: 575px){
+	
+		.navbar-nav {
+  
+    flex-direction: column;
+    -ms-flex-direction: column;
+    align-items: flex-end;
+ }
+.courses-section .course .card-body .card-title {
+    font-size: 26px;
+  
+}
+.courses-section .course .card-body .nav li:last-child {
+    display: block;}
+
+
+    .testimonial-section {
+    	p{
+    		text-align: center;
+    	}
+    }
+    footer{
+    	text-align: center;
+    	h3{
+    		font-size: 21px
+    	}
+    }
+
+}
+
